@@ -1,0 +1,53 @@
+
+% Definición de los datos de entrada (X) y los datos de salida (y)
+X = [1 1 1; 1 1 -1; 1 -1 1; 1 -1 -1];
+y = [1; 1; 1; -1];
+
+% Inicialización de los pesos (W) y el umbral (b)
+W = [0.52; 0.75; -0.32]; % Pesos iniciales
+b = 0.8; % Bias inicial
+
+% Parámetros del algoritmo
+alpha = 0.8; % Tasa de aprendizaje
+epochs = 4; % Número de épocas (iteraciones)
+
+% Función de activación (función escalón)
+stepFunction = @(x) double(x >= 0) * 2 - 1; % Retorna 1 si x >= 0, -1 si x < 0
+
+% Entrenamiento del Perceptrón
+for epoch = 1:epochs
+    fprintf('Iteración %d\n', epoch);
+    for i = 1:length(y)
+        % Calcula la salida del perceptrón
+        Y = sum(W .* X(i, :)') + b;
+        output = stepFunction(Y);
+        
+        % Calcula el error
+        error = y(i) - output;
+        
+        % Mostrar resultados
+        fprintf('Entrada: [%d %d %d], Salida: %d, Error: %d\n', X(i, 1), X(i, 2), X(i, 3), output, error);
+        
+        % Actualiza los pesos y el umbral si hay error
+        if error ~= 0
+            W = W + alpha * error * X(i, :)';
+            b = b + alpha * error;
+            fprintf('Pesos actualizados: W0 = %.2f, W1 = %.2f, W2 = %.2f, b = %.2f\n', W(1), W(2), W(3), b);
+        end
+    end
+    fprintf('\n');
+end
+
+% Mostrar los pesos y el umbral aprendidos
+disp('Pesos aprendidos:');
+disp(W);
+disp('Umbral aprendido:');
+disp(b);
+
+% Probar el perceptrón con los datos de entrada
+disp('Resultados del perceptrón para las entradas:');
+for i = 1:length(y)
+    Y = sum(W .* X(i, :)') + b;
+    output = stepFunction(Y);
+    fprintf('Entrada: [%d %d %d], Salida: %d\n', X(i, 1), X(i, 2), X(i, 3), output);
+end
