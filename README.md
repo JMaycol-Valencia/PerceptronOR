@@ -5,9 +5,9 @@ Este repositorio contiene la implementación del algoritmo del perceptrón simpl
 
 ## Authors
 
-- [@Mijael Ticacolque Cruz](https://www.github.com/octokatherine)
-- [@Brandon Brayan Alvarez Espinoza](https://www.github.com/octokatherine)
-- [@Jhonn Maycol Valencia Andrade](https://www.github.com/octokatherine)
+- [@Mijael Ticacolque Cruz]
+- [@Brandon Brayan Alvarez Espinoza]
+- [@Jhonn Maycol Valencia Andrade](https://github.com/JMaycol-Valencia)
 
 
 ## Informacion Academica
