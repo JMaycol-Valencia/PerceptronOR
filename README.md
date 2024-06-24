@@ -7,6 +7,7 @@ Este repositorio contiene la implementación del algoritmo del perceptrón simpl
 
 - [@Mijael Ticacolque Cruz]
 - [@Brandon Brayan Alvarez Espinoza]
+- [@Kevin Alex Vargas Achacollo]
 - [@Jhonn Maycol Valencia Andrade](https://github.com/JMaycol-Valencia)
 
 
